@@ -1,0 +1,39 @@
+{
+    "name": "jest-monocart-coverage",
+    "version": "1.0.0",
+    "description": "Jest Monocart Coverage Reports",
+    "main": "./lib/index.js",
+    "exports": {
+        ".": {
+            "types": "./lib/index.d.ts",
+            "import": "./lib/index.mjs",
+            "require": "./lib/index.js",
+            "default": "./lib/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "types": "./lib/index.d.ts",
+    "scripts": {
+        "link": "sf link ./ -f",
+        "test": "jest",
+        "patch": "npm run test && sf publish patch -r"
+    },
+    "files": [
+        "lib"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cenfun/jest-v8-coverage.git"
+    },
+    "dependencies": {
+        "monocart-coverage-reports": "^2.2.2"
+    },
+    "devDependencies": {
+        "eight-colors": "^1.2.1",
+        "eslint": "^8.56.0",
+        "eslint-config-plus": "^1.0.6",
+        "eslint-plugin-html": "^7.1.0",
+        "jest": "^29.7.0"
+    }
+}
