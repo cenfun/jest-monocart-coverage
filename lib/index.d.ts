@@ -1,7 +1,1 @@
-declare namespace coverageReport {
-
-}
-
-declare function coverageReport(data): string[];
-
-export = coverageReport;
+export * from "monocart-coverage-reports"
