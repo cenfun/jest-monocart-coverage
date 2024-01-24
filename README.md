@@ -2,7 +2,6 @@
 [![](https://img.shields.io/npm/v/jest-monocart-coverage)](https://www.npmjs.com/package/jest-monocart-coverage)
 [![](https://badgen.net/npm/dw/jest-monocart-coverage)](https://www.npmjs.com/package/jest-monocart-coverage)
 ![](https://img.shields.io/github/license/cenfun/jest-monocart-coverage)
-![](https://img.shields.io/github/actions/workflow/status/cenfun/jest-monocart-coverage/static.yml)
 
 
 > A [Jest](https://github.com/jestjs/jest/) custom reporter for [monocart coverage reports](https://github.com/cenfun/monocart-coverage-reports)
