@@ -4,10 +4,15 @@ module.exports = {
     coverageReporters: ['none'],
     reporters: [
         ['./lib', {
-            // logging: 'debug',
+            logging: 'debug',
             name: 'Jest Monocart Coverage Report',
 
-            outputDir: './docs'
+            outputDir: './docs',
+
+            reports: [
+                'v8',
+                'text'
+            ]
         }]
     ]
 };
