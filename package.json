@@ -27,7 +27,7 @@
         "url": "git+https://github.com/cenfun/jest-v8-coverage.git"
     },
     "dependencies": {
-        "monocart-coverage-reports": "^2.3.0"
+        "monocart-coverage-reports": "^2.4.3"
     },
     "devDependencies": {
         "eight-colors": "^1.2.1",
