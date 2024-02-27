@@ -1,18 +1,18 @@
 module.exports = {
     collectCoverage: true,
-    coverageProvider: 'v8',
+    coverageProvider: 'babel',
     coverageReporters: ['none'],
     reporters: [
         ['./lib', {
             // logging: 'debug',
             name: 'Jest Monocart Coverage Report',
 
-            outputDir: './docs/v8',
+            outputDir: './docs/istanbul',
 
             reports: [
-                'v8',
                 'raw',
-                'text'
+                'text',
+                'html'
             ]
         }]
     ]
