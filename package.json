@@ -1,6 +1,6 @@
 {
     "name": "jest-monocart-coverage",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Jest Monocart Coverage Reports",
     "main": "./lib/index.js",
     "exports": {
