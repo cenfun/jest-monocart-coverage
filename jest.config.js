@@ -20,6 +20,7 @@ module.exports = {
 
             reports: [
                 'v8',
+                'codecov',
                 'raw',
                 'text'
             ]

@@ -42,6 +42,6 @@ const config = {
 };
 export default config;
 ```
-Check repo [monocart coverage reports](https://github.com/cenfun/monocart-coverage-reports) for more options.
+Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-reports) for more coverage options.
 
 
