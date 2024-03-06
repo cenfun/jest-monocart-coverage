@@ -9,7 +9,7 @@ module.exports = {
             // logging: 'debug',
             name: 'Jest Monocart Coverage Report',
 
-            outputDir: './docs/istanbul',
+            outputDir: './coverage-reports/istanbul',
 
             reports: [
                 'raw',

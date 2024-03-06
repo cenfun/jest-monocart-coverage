@@ -16,7 +16,13 @@ module.exports = {
             // logging: 'debug',
             name: 'Jest Monocart Coverage Report',
 
-            outputDir: './docs/v8',
+            outputDir: './coverage-reports/v8',
+
+            all: './src',
+
+            sourcePath: {
+                'src/': ''
+            },
 
             reports: [
                 'v8',
