@@ -29,8 +29,14 @@ module.exports = {
                 'codecov',
                 'raw',
                 'text'
-            ]
+            ],
+
+            onEnd: () => {
+                console.log('onEnd');
+            }
         }]
-    ]
+    ],
+
+    globalTeardown: './global-teardown.js'
 
 };
