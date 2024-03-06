@@ -44,4 +44,6 @@ export default config;
 ```
 Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-reports) for more coverage options.
 
-
+## The Execution Order of Hooks
+- For Jest: custom reporter `onEnd` -> `globalTeardown`
+- For Playwright: `globalTeardown` -> coverage `onEnd` -> custom reporter `onEnd`
