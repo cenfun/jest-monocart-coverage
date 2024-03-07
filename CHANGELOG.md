@@ -1,5 +1,8 @@
 ## Changelog
 
+* 1.1.0
+    - fixed `all` option for istanbul reports
+
 * 1.0.4
     - updated `mcr` to `^2.6.5`
 

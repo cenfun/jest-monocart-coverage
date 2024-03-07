@@ -2,10 +2,20 @@ module.exports = {
 
     // Enable coverage
     collectCoverage: true,
+    coverageDirectory: './coverage-reports/jest',
+    collectCoverageFrom: [
+        'src/**/*.js'
+    ],
     // Recommended to use `v8` to support the generation of native v8 coverage reports.
-    coverageProvider: 'v8',
+    // coverageProvider: 'v8',
     // Monocart can also support all coverage reports, so there is no need to set up reports here.
-    coverageReporters: ['none'],
+    // coverageReporters: ['none'],
+    coverageReporters: [
+        ['lcov'],
+        ['json'],
+        ['text'],
+        ['text-summary']
+    ],
 
     reporters: [
         // If custom reporters are specified, the default Jest reporter will be overridden. If you wish to keep it, 'default' must be passed as a reporters name:
@@ -16,7 +26,7 @@ module.exports = {
             // logging: 'debug',
             name: 'Jest Monocart Coverage Report',
 
-            outputDir: './coverage-reports/v8',
+            outputDir: './coverage-reports/all',
 
             all: './src',
 
@@ -25,14 +35,17 @@ module.exports = {
             },
 
             reports: [
-                'v8',
-                'codecov',
-                'raw',
-                'text'
+                ['raw'],
+                ['lcov'],
+                ['json'],
+                ['text'],
+                ['text-summary']
+                // ['console-details'],
+                // ['console-summary']
             ],
 
             onEnd: () => {
-                console.log('onEnd (before the global teardown)');
+                console.log('onEnd');
             }
         }]
     ],

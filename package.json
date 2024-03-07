@@ -16,7 +16,8 @@
     "scripts": {
         "link": "sf link ./ -f",
         "test": "jest",
-        "test:istanbul": "jest -c jest.istanbul.config.js",
+        "test:istanbul": "jest -c jest.config.istanbul.js",
+        "test:all": "jest -c jest.config.all.js test/wrapped.test.js",
         "patch": "npm run test && sf publish patch -r"
     },
     "files": [
