@@ -31,6 +31,12 @@ module.exports = {
                 'text'
             ],
 
+            onEntry: (entry) => {
+                if (entry.url.endsWith('wrapped.js')) {
+                    // console.log(entry.functions.map((it) => it.ranges));
+                }
+            },
+
             onEnd: () => {
                 console.log('onEnd (before the global teardown)');
             }
