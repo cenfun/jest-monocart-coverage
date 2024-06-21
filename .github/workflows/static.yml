@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
 
-  test-node-20.10:
+  test-node-20-10:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,7 +37,7 @@ jobs:
         env:
           FORCE_COLOR: true
 
-  test-node-20.15:
+  test-node-20-15:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
