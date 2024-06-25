@@ -16,6 +16,7 @@
     "scripts": {
         "link": "sf link ./ -f",
         "test": "jest",
+        "test:issue": "jest --runInBand",
         "test:istanbul": "jest -c jest.config.istanbul.js",
         "test:all": "jest -c jest.config.all.js test/wrapped.test.js",
         "patch": "npm run test && sf publish patch -r"
@@ -29,7 +30,7 @@
         "url": "git+https://github.com/cenfun/jest-v8-coverage.git"
     },
     "dependencies": {
-        "monocart-coverage-reports": "^2.8.4"
+        "monocart-coverage-reports": "^2.8.5"
     },
     "devDependencies": {
         "eight-colors": "^1.3.0",
