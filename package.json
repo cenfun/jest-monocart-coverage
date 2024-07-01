@@ -38,5 +38,8 @@
         "eslint-config-plus": "^2.0.2",
         "eslint-plugin-html": "^8.1.1",
         "jest": "^29.7.0"
+    },
+    "peerDependencies": {
+        "@jest/reporters": "*"
     }
 }
