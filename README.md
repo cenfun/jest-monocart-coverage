@@ -47,3 +47,21 @@ Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-re
 ## The Execution Order of Hooks
 - For Jest: custom reporter `onEnd` -> `globalTeardown`
 - For Playwright: `globalTeardown` -> coverage `onEnd` -> custom reporter `onEnd`
+
+## Common issues
+- Resolve full path of the file with option `sourcePath`
+```js
+const path = require("path")
+
+// MCR coverage options
+{
+
+    sourcePath: (filePath, info)=> {
+        if (!filePath.includes('/') && info.distFile) {
+            return `${path.dirname(info.distFile)}/${filePath}`;
+        }
+        return filePath;
+    }
+  
+}
+```
