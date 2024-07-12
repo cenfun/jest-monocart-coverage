@@ -49,7 +49,7 @@ Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-re
 - For Playwright: `globalTeardown` -> coverage `onEnd` -> custom reporter `onEnd`
 
 ## Common issues
-- Resolve full path of the file with option `sourcePath`
+- Resolve full path of the file with option `sourcePath` (issue [#5](https://github.com/cenfun/jest-monocart-coverage/issues/5))
 ```js
 const path = require("path")
 
