@@ -67,7 +67,7 @@ const path = require("path")
 }
 ```
 
-- Failed to load Sourcemap
+- Failed to load Sourcemap (issue [#6](https://github.com/cenfun/jest-monocart-coverage/issues/6))
 
 Using `sourceMap` instead of `inlineSourceMap` in `tsconfig.json`
 ```json
