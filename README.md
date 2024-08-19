@@ -50,6 +50,7 @@ Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-re
 
 ## Common issues
 - Resolve full path of the file with option `sourcePath` (issue [#5](https://github.com/cenfun/jest-monocart-coverage/issues/5))
+
 ```js
 const path = require("path")
 
@@ -63,5 +64,17 @@ const path = require("path")
         return filePath;
     }
   
+}
+```
+
+- Failed to load Sourcemap
+
+Using `sourceMap` instead of `inlineSourceMap` in `tsconfig.json`
+```json
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "inlineSourceMap": false
+    }
 }
 ```
