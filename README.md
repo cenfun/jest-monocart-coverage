@@ -26,7 +26,7 @@ const config = {
     collectCoverage: true,
     // Recommended to use `v8` to support the generation of native v8 coverage reports.
     coverageProvider: 'v8',
-    // Monocart can also support all coverage reports, so there is no need to set up reports here.
+    // Monocart generates the report, so disable Jest's own coverage reporters.
     coverageReporters: ['none'],
 
     reporters: [
@@ -36,11 +36,7 @@ const config = {
         // Monocart custom reporter to generate coverage reports. 
         ['jest-monocart-coverage', {
             name: 'My Unit Coverage Report',
-            reports: [
-                ['v8'],
-                ['console-summary'],
-                ['lcovonly']
-            ],
+            reports: ['v8', 'console-summary'],
             outputDir: './coverage-reports/unit'
         }]
     ]
@@ -49,6 +45,8 @@ const config = {
 module.exports = config;
 ```
 Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-reports) for more coverage options.
+
+For per-file terminal details, use `reports: ['v8', 'console-details', 'console-summary']`. With `coverageProvider: 'v8'`, no Istanbul report types are needed.
 
 ## The Execution Order of Hooks
 - For Jest: custom reporter `onEnd` -> `globalTeardown`
@@ -84,3 +82,22 @@ Using `sourceMap` instead of `inlineSourceMap` in `tsconfig.json`
     }
 }
 ```
+
+## AI Agent Skill
+
+The reusable [Jest Monocart Coverage skill](skills/jest-monocart-coverage/SKILL.md) helps AI coding agents configure the reporter, choose V8 or Istanbul coverage, set Monocart options and filters, debug missing or incorrectly mapped coverage, handle thresholds, and maintain this repository. It uses a main `SKILL.md` with task-specific references loaded on demand.
+
+The npm package includes `skills/jest-monocart-coverage/`. Copy this **entire directory**, including `references/`, into your agent's supported skills location, or ask the agent to read `SKILL.md` directly. Installing the package does not automatically register the skill or modify agent settings. The instructions are in English; requests and responses can use any language.
+
+From the host project root, locate the installed skill and package manifest:
+
+```sh
+node -p "require.resolve('jest-monocart-coverage/skills/jest-monocart-coverage/SKILL.md')"
+node -p "require.resolve('jest-monocart-coverage/package.json')"
+```
+
+Read the resolved skill, then follow its relative reference links. It supports the 2.x line and later only. These commands resolve files; they do not import Markdown as JavaScript.
+
+## Changelog
+
+- [CHANGELOG.md](./CHANGELOG.md)

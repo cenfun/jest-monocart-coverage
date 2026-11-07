@@ -28,7 +28,9 @@ module.exports = {
                 'v8',
                 'codecov',
                 'raw',
-                'text'
+                'text',
+                'console-details',
+                'console-summary'
             ],
 
             onEntry: (entry) => {
