@@ -11,6 +11,12 @@
 npm i jest-monocart-coverage
 ```
 
+## Requirements
+- Node.js `>= 22.15.0` (required by `monocart-coverage-reports` v3, which is ESM only)
+- Jest `>= 29` (tested with Jest 30)
+
+> Upgrading from v1? See the [Changelog](./CHANGELOG.md). Version 2 uses `monocart-coverage-reports` v3, so Node.js 18/20 and versions of Node.js 22 earlier than 22.15.0 are no longer supported.
+
 ## Usage
 ```js
 // jest.config.js
@@ -40,7 +46,7 @@ const config = {
     ]
     
 };
-export default config;
+module.exports = config;
 ```
 Check [monocart coverage reports](https://github.com/cenfun/monocart-coverage-reports) for more coverage options.
 

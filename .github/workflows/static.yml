@@ -1,21 +1,19 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Unit Test
 
 on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-    
+
   pull_request:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Allow only one concurrent run, skipping runs queued between the run in-progress and latest queued.
 concurrency:
   group: "test"
 
@@ -24,44 +22,25 @@ env:
 
 jobs:
 
-  test-node-20-9:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # monocart-coverage-reports v3 requires Node.js >= 22.15.0
+        node-version:
+          - 22.15.0
+          - 22.x
+          - 24.x
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: 20.9
+          node-version: ${{ matrix.node-version }}
           cache: ''
-      - run: npm i
-      - run: npm run test:issue
 
-  test-node-20-10:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.10
-          cache: ''
-      - run: npm i
-      - run: npm run test:issue
-
-  test-node-20-16:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.16
-          cache: ''
       - run: npm i
       - run: npm run test:issue

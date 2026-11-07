@@ -4,5 +4,10 @@ const plus = require('eslint-config-plus');
 
 // https://eslint.org/docs/latest/use/configure/configuration-files
 module.exports = [
+    {
+        ignores: [
+            'coverage-reports/'
+        ]
+    },
     plus
 ];
